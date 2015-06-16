@@ -1,0 +1,3 @@
+post-build=google/zombi_mako/mako:5.1.1/LMY47X/kldoc05170918:userdebug/test-keys
+post-timestamp=1431825497
+pre-device=mako

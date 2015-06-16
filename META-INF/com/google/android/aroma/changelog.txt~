@@ -1,0 +1,183 @@
+﻿<b><#selectbg_g>ZOMBi-POP Changelog:</#></b>
+<b><#selectbg_g>15/05/2015 ZOMBi-POP Full ROM BETA</#></b>
+=====================================================
+Based off omni-5.1-20150513-zombi_Mako-KANG source maintained by kldoc/lj50036/hardslog.
+
+<b><#selectbg_g>Tip 1: Go to Settings - About Tablet, Click build number 7 times
+Now you will see Developer Settings & Performance menus</#></b>
+
+<b><#selectbg_g>20150508 ZOMBi-POP 5.1.1 Release 1 changes</#></b>
+ - WELCOME MAKO TO THE WORLD OF ZOMBi-POP
+ - Rebased from omni-5.1.1-20150513-zombi_Mako-KANG maintained by kldoc, lj50036, hardslog
+ - Android 5.1.1!
+ - Retweaked some File System and Virtual Memory parameters - focus on smoothness and battery
+ - Viper4Android sound enhancer updated to lollipop version + updated the audio_effect.conf file
+ - Updated Google Play Store to version 5.5.8
+ - Updated Google Play Services to version 7.3.29
+ - Updated Google Search to version 4.5.13.19
+ - Updated Google Maps to version 9.8.1
+ - Updated Google Hangouts to version 3.2.91698097
+ - Updated Google Play Music to version 5.9.1854R
+ - Updated Google Calendar to version 5.2-91668080
+ - Updated ESFileExplorer to version 3.2.5.1
+ - Fixed swipe gestures on google keyboard
+ - Fix for Battery Drain on Google Play Services
+ - Removed Titanium Backup from the zip file
+
+<b><#selectbg_g>20150406 ZOMBi-POP 5.1 Beta 1 changes</#></b>
+ - Updated to Android 5.1!
+ - Fixed GAPPS to /data partition not working correctly
+ - Updated Google Play Store version 5.4.10
+ - Getting closer to RC1!
+ - Fixed Setup Wizard crash
+ - Added NEW Options to Aroma for GAPPS
+ - You can now choose to install no GAPPS or minimal GAPPS (just playstore and syncs)
+ - Brand new 5.1 GAPPS package from Banks used
+ - Google Play Store updated to version 5.3.6
+ - Google Play Services updated to version 7.0.99
+ - Updated Google Mail to version 5.1.89985675
+ - Updated Google News and Weather to version 2.3
+ - Updated Google Maps to version 9.6.1
+ - Updated Google Text To Speech to version 3.4.5
+ - Updated YouTube to version 10.11.55
+ - Updated Terminal Emulator to version 1.0.69
+ - Removed Keyboard Manager as it no longer works on Lollipop
+ - Browser speed tweaks incorporated into source
+ - OmniSwitch updates
+ - Settings changes to alarms and notification interruptions
+ - Updated Google Music to version 5.8.1836R
+ - Removed Titanium Launcher - as it needs to be installed form the store now
+ 
+
+
+<b><#selectbg_g>20150226 ZOMBi-POP Beta 6 changes</#></b>
+ - Rebased from omni-5.0.2-2015-02-26-zombi_flo-KANG source maintained by lj50036
+  - Show Optimizing app dialog on first boot
+  - Prevent copyNativeLib of package scanning to reduce booting time
+  - Keyguard: don't refresh ui when screen off which causes high power when screen off
+  - Prevent App Not Responding when broadcast receiver is killed
+  - lowmemorykiller: Fix high min-free values
+ - Removed my minfree init.d script to test new default values
+ - Changed the interactive governor tweaks to help battery life and heat :)
+ - Updated SuperSU to version 2.46
+ - Updated Apex Launcher to 3.0.2
+ - Updated Google Maps to version 9.4.0
+ - Updated YouTube to version 10.05.6
+
+<b><#selectbg_g>20150127 ZOMBi-POP Beta 5 changes</#></b>
+ - First release for the Nexus 7 2013 Flo!!!!
+ - Rebased from omni-5.0.2-20150127-zombi_flo-KANG source maintained by lj50036/hardslog
+ - NEW Material AOSP Broswer - very nice!
+ - Omni Switch but no windows mode yet
+ - Fixed the Apex and Nova Launchers getting missed up on install
+ - CLEANTweaks init.d re-balanced to be less aggressive - hopefully stops so many reboots
+ - Updated Google Chrome to version 40.0.2214.89
+ - Updated Google Maps to version 9.3.0
+ - Updated YouTube to version 10.02.3
+ - Updated Android Terminal Emulator to version 1.0.64
+
+<b><#selectbg_g>20150119 ZOMBi-POP Beta 4 changes</#></b>
+ - Recompiled framework-res.apk with new default_wallpaper.jpg
+ 
+<b><#selectbg_g>20150119 ZOMBi-POP Beta 3 changes</#></b>
+ - New name - new logo! ZOMBi-POP
+ - Rethemed Aroma to new ZOMBi-POP theme
+ - Added 2 optional beta tweaks for testing (screen and kernel)
+
+<b><#selectbg_g>20150118 Lollipop Beta 2 changes</#></b>
+ - Updated to latest OMNI Lollipop source omni-5.0.2-20150117-zombi_tf700t-KANG maintained by lj50036 
+ - Fixed issue with AOSP Browser getting installed when not selected
+ - Fixed issue with Live Wallpapers getting installed when not selected
+ - Fixed issue with Launcher3 getting installed when not selected
+ - Fixed issue with Terminal not getting installed when selected
+ - Fixed issue with DSPManager still getting installed when Viper4fx is installed
+ - Removed stock calendar as google app one is far superior
+ - Fixed init.d scripts not running due to wrong permissions and wrong ramdisk init.rc call
+ 
+<b><#selectbg_g>20150117 Lollipop Beta 1 changes</#></b>
+ - Updated system and data apps to use new lollipop structures
+ - Updated all apps to latest versions
+ - Removed xposed as not compaitble with lollipop
+ - Tweaked the force gpu options
+ 
+<b><#selectbg_g>20150111 Lollipop Alpha 1 changes</#></b>
+ - Updated to latest OMNI Lollipop source maintained by lj50036
+ - New PA GApps Lollipop version 2015
+ - Initial Beta test build to see what works and what doesn't
+ 
+<b><#selectbg_g>20141010 Beta 9 changes</#></b>
+ - Rebased off latest source omni-4.4.4-20141008-zombi_tf700t-KANG updated by hardslog/lj50036
+ - Reduced NV Interposer log spam - thanks for the link BxMxK
+ - Fixed dock battery reporting with app/widget ! Thx @hardslog
+ - Rebuilt framework-res and settings apks with red theme
+ - Changed the Force GPU option to comply with build.prop source changes
+ - Added _that kernel v11
+ - Added Grimlock v4 kernel
+ - Added latest omni/cm11 kernel
+ - Fixed BT not turning on without rebooot
+ - Fixed Dock battery reporting (needs an app/widget to work) 
+ - Updated Dolphin Browser to version 11.2.3
+ - Updated Google TTS to 3.2.12
+ - Updated Google Music to version 5.6.1523P
+ - Updated Google Chrome to version 37.0.2062.117
+ - Updated Google Mail to version 4.9
+ - Updated Google Search to version 3.6.14.1337016
+ - Updated Google Talkback to version 3.5.2
+ - Updated Google Play Store to version 4.9.13
+ - Updated Google Core Services to version 5.0.89
+ - Updated Google Maps to version 8.3.1
+ - Updated Google Search to version 3.6.14
+ - Updated YouTube to version 5.10.3.5
+ - Updated ESFileExplorer to version 3.2.1.2
+ - Updated Apex Launcher to version 2.6.0
+ - Updated AdAway to version 2.9.1
+ - Updated GravityBox to verison 3.4.3
+ - Note : Google Hangouts cannot be updated to latest version due to Google breaking apps packages with incompatible shared libraries. Going forward it will be a store app only
+
+<b><#selectbg_g>20140903 Beta 8 changes UNRELEASED</#></b>
+ - Reduced NV Interposer log spam - thanks for the link BxMxK
+
+<b><#selectbg_g>20140827 Beta 7 changes</#></b>
+ - Fixed issues with Android Terminal Emulator crashing
+ - Fixed issues with Root being lost - reverted to cm11 ramdisks rather than omni as this was causing the issue
+ - SuperUser and SU Binary updated to version 2.0.2
+ - Dynamic fsync properly enabled on Grimlock kernel when fsync disabled selected in installer
+
+<b><#selectbg_g>20140826 Beta 6 changes</#></b>
+ - New Base - Rebuilt from latest source which has updated bluetooth config - thanks lj50036
+ - 90% of dock should be working - battery display is not
+ - Added CM11 Kernel as option in installer - runs well
+ 
+<b><#selectbg_g>20140825 Beta 5 changes</#></b>
+ - Themed framework with a splash of RED
+ - Final Tweaks to Aroma Theme
+ - Public release beta
+
+<b><#selectbg_g>20140824 Beta 4 changes</#></b>
+ - Rebased off latest source omni-4.4.4-20140824-zombi_tf700t-KANG updated by lj50036
+ - Updated GravityBox to version 3.3.3
+ - Removed DropBox as bloatware (30MB!) - still available on the Play Store
+ - Removed Google Plus as bloatware (33MB!) - still available on the Play Store
+ - Small changed to aroma themes to fix dark text on dark backgrounds
+ - Changed the transition config in aroma to see if it fixes screen freezes
+
+<b><#selectbg_g>20140823 Beta 3 changes</#></b>
+ - Fixed installer script to allow rom2sd on grimlock kernel install
+ - Fixed aroma freezes - or reduced them
+ - Re-themed Zombi-X aroma theme
+
+<b><#selectbg_g>20140822 Beta 2 changes</#></b>
+ - Updated performance switch for CPU to allow OC to 1800 on _that's kernel
+ - Fixed correct rom version in the build.prop
+ - Updated SU Binary to latest version
+ - Updated Chrome, Gmail, Google Now, YouTube
+ - Added Android Terminal to ROM
+ - New Red Aroma Theme for Zombi-X - requires less memory
+ 
+<b><#selectbg_g>20140822 changes</#></b>
+ - Initial release - omni cromified after source build
+ - Added SuperUSer and su binary for root capability
+ - Browser tweaked for speed and touch smoothness
+ - Added all the CROMBi/CROMi goodness to the base rom
+ - Aroma tuned for ZOMBi-X
+ 

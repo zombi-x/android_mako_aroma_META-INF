@@ -1,0 +1,292 @@
+﻿##
+# AROMA Installer 3.00 - AROMA Installer Configuration
+#       (c) 2011-2012 by Ahmad Amarullah
+#           amarullz - xda-developers
+#           http://www.amarullz.com/
+#
+#       Binary Version  : 3.00
+#       Binary Codename : Flamboyan
+##
+#ini_set("force_colorspace","bgra");
+
+#ini_set("force_colorspace","argb");
+
+# Forcing Device Pixelate Size
+# default: floor( min( width, height ) / 160 )
+#
+# Usefull for tablet device, if interface was too big, you can
+# force dp size for smaller UI size.
+#
+
+ini_set("dp","5");
+theme("zombipop");
+#
+
+ini_set("rom_name",              "ZOMBi-POP 5.1.1 Beta 1");
+ini_set("rom_version",           "Lollipop-5.1.1-OMNI-DEODEX");
+ini_set("rom_author",            "kldoc/sbdags/lj50036/hardslog");
+ini_set("rom_device",            "LGE Nexus 4 (MAKO)");
+ini_set("rom_date",              "May-17-2015");
+
+splash(
+   4000,
+   "splash"
+);
+
+fontresload( "0", "ttf/Roboto-Regular.ttf;ttf/DroidSansFallback.ttf;", "11" );
+fontresload( "1", "ttf/Roboto-Regular.ttf;ttf/DroidSansFallback.ttf;", "12" );
+
+menubox(
+  "AROMA THEME",
+  "Please touch a theme for the installer:",
+  "@confirm",
+  "theme.prop",
+  "ZOMBi-POP Theme","NEW","@update",
+  "ZOMBi-X Theme","Red","@update",
+  "CROMB-X 7 Theme","Purple","@update",
+  "CROMBi-kk Theme","Dark Theme","@update",
+  "CROMi-X Theme","Retro Nostalgia","@update"
+
+);
+if
+    file_getprop("/tmp/aroma-data/theme.prop","selected") == "2"
+then
+    theme("zombix");
+endif;
+if
+    file_getprop("/tmp/aroma-data/theme.prop","selected") == "3"
+then
+    theme("cromix2");
+endif;
+if
+    file_getprop("/tmp/aroma-data/theme.prop","selected") == "4"
+then
+    theme("crombikk");
+endif;
+if
+    file_getprop("/tmp/aroma-data/theme.prop","selected") == "5"
+then
+    theme("cromix");
+endif;
+
+viewbox(
+    "WELCOME",
+    "You are about to flash <b>"+ini_get("rom_name")+
+	"</b> for the <b>"+sysprop("ro.product.model")+" ("+sysprop("ro.product.name")+"-"+sysprop("ro.board.platform")+"-"+sysprop("ro.product.device")+")</b>.\n\n"+
+    
+      "VERSION\t\t\t: <b><#selectbg_g>"+ini_get("rom_version")+"</#></b>\n"+
+      "AUTHOR \t\t\t: <b><#selectbg_g>"+ini_get("rom_author")+"</#></b>\n"+
+	  "DEVICES \t\t\t: <b><#selectbg_g>"+ini_get("rom_device")+"</#></b>\n"+
+      "RELEASED\t\t: <b><#selectbg_g>"+ini_get("rom_date")+"</#></b>\n\n"+
+	  
+	  "MODEL\t\t\t: <b><#selectbg_g>"+sysprop("ro.product.model")+"</#></b>\n"+
+      "NAME\t\t\t: <b><#selectbg_g>"+sysprop("ro.product.name")+"</#></b>\n"+
+      "DEVICE\t\t\t: <b><#selectbg_g>"+sysprop("ro.product.device")+"</#></b>\n"+
+      "BOARD\t\t\t: <b><#selectbg_g>"+sysprop("ro.product.board")+"</#></b>\n"+
+      "PLATFORM\t\t: <b><#selectbg_g>"+sysprop("ro.board.platform")+"</#></b>\n"+
+      "MANUFACTURER\t: <b><#selectbg_g>"+sysprop("ro.product.manufacturer")+"</#></b>\n"+
+      "CPU\t\t\t\t: <b><#selectbg_g>"+sysprop("ro.product.cpu.abi")+"</#></b>\n\n"+
+      "SYSTEM Size\t\t: <b><#selectbg_g>"+getdisksize("/system","m")+" MB</#></b>\n"+
+        "\tFree\t\t\t: <b><#selectbg_g>"+getdiskfree("/system","m")+" MB</#></b>\n\n"+
+      "DATA Size\t\t\t: <b><#selectbg_g>"+getdisksize("/data","m")+" MB</#></b>\n"+
+        "\tFree\t\t\t: <b><#selectbg_g>"+getdiskfree("/data","m")+" MB</#></b>\n\n"+
+      "SDCARD Size\t\t: <b><#selectbg_g>"+getdisksize("/external_sdcard","m")+" MB</#></b>\n"+
+        "\tFree\t\t\t: <b><#selectbg_g>"+getdiskfree("/external_sdcard","m")+" MB</#></b>\n\n"+
+	
+    "Press <b>Next</b> to Continue the Installation...\n",
+    "@welcome"
+);
+
+# Changelog
+textbox(
+  "CHANGELOG INFO",
+  "Changelog",
+  "@update",
+  resread("changelog.txt")
+);
+
+# Flash Options
+menubox(
+  "PRE-FLASH OPTIONS",
+  "Please select:",
+  "@confirm",
+  "wipe.prop",
+  "Install with Wipe of Dalvik Cache and Cache","RECOMMENDED","@update",
+  "Install with Wipe of only Cache","","@alert"
+
+);
+
+# Kernels
+
+
+# DPI
+  form(
+  "DPI - DOTS PER INCH",
+  "Must Choose One!",
+  "@personalize",
+  "dpi.prop",
+
+  "DPI","HDPI Modes","","group",
+  "320","320 DPI","Stock Sized Fonts and Icons","select.selected",
+  "280","280 DPI","Medium Sized Fonts and Icons","select",
+  "240","240 DPI","Small Sized Fonts and Icons","select"
+
+   );
+
+# Boot Animations
+form(
+  "BOOT ANIMATIONS",
+  "Must Choose One!",
+  "@customize",
+  "boot.prop",
+  
+  "boot","Boot Animations","","group",
+  "zombi","ZOMBi-POP","by hardslog","select.selected",
+  "androidl","Google Android-L","","select",
+  "nexusflow","Google Nexus Flow","","select",
+  "unknownp","Unknown Pleasures","","select"
+  
+);
+
+# Launchers
+form(
+  "LAUNCHERS",
+  "Choose as many as you want!",
+  "@customize",
+  "launcher.prop",
+  
+  "launchers","Launcher Home Screens","","group",
+  "omni","Omni Launcher","","check.checked",
+  "gel","Google Experience Launcher","","check",
+  "apex","Apex Launcher","","check",
+  "nova","Nova Launcher","","check"
+  
+);
+
+# GAPPS Options
+form(
+  "GOOGLE APPS OPTIONS",
+  "Select the one you want",
+  "@apps",
+  "gappops.prop",
+  "GAPPOPS","GAPPS OPTIONS","","group",
+  "gappssys","Choose GAPPS to /system","Recommended install","select.selected",
+  "gappssysmin","Minimal GAPPS to /system","Only play store and sync services","select",
+  "gappsnone","Install No GAPPS at ALL","You will not have a play store!","select"
+    
+);
+
+# Gapps Minimal Install setup google.prop
+if
+	file_getprop("/tmp/aroma-data/gappops.prop","GAPPOPS") == "gappssysmin" ||
+	file_getprop("/tmp/aroma-data/gappops.prop","GAPPOPS") == "gappsnone"
+then
+	writetmpfile("google.prop","livewalls=0");
+	write(getvar("zaroma")+"/google.prop",readtmpfile("google.prop"));
+endif;
+
+# Google Apps
+if
+	file_getprop("/tmp/aroma-data/gappops.prop","GAPPOPS") == "gappssys"
+then
+
+	form(
+	"GOOGLE APPS",
+	"Check the ones you want - Scroll down to see all",
+	"@apps",
+	"google.prop",
+	"GAPPS","System Apps /system/app","","group",
+	"calendar","Google Calendar","Calendar App","check.checked",
+	"now","Google Now and Voice Search","Google Voice","check.checked",
+	"music","Google Music","Music Player","check.checked",
+	"newsweather","Google News and Weather","Create your own news feeds","check.checked",
+	"youtube","YouTube","Watch Videos","check.checked",
+	"maps","Google Maps","Maps and SatNav","check.checked",
+	"mail","Google Mail","Google's Email client","check.checked",
+	"hangouts","Google Hangouts","Google SMS and Talk","check",
+	"tts","Google Text to Speech","Text to Speech output engine","check",
+	"ears","Google Ears","Identify Music and Sounds","check",
+	"livewalls","Live Wallpapers","Galaxy4, HoloSpiral, Magic Smoke, PhaseBeam and Stock Live Wallpapers","check"
+  
+	);
+
+endif;
+
+# Miscellaneous Apps
+form(
+  "MISCELLANEOUS APPS",
+  "Check the ones you want - Scroll down to see all",
+  "@apps",
+  "misc.prop",
+  
+  "systemapps","System Apps /system/app","","group",
+  "esfe","ES File Explorer","Best root, file and samba manager","check.checked",
+  "adaway","AdAway App","Control Ads yourself","check.checked",
+  "viper","Viper4Android Music FX","Replaces CM DSP Manager","check.checked",
+  "term","Terminal Emulator","Must have for all android users","check.checked"
+  
+);
+
+# Browsers
+form(
+  "WEB BROWSER APPS",
+  "Check the ones you want",
+  "@apps",
+  "browser.prop",
+  
+  "browsers","Web Browser Apps /system/app","","group",
+  "aospbrowser","Android Stock Browser","AOSP Web Browser","check.checked"
+  
+);
+
+# Tweaks and Scripts
+form(
+  "TWEAKS AND SCRIPTS",
+  "Check the ones you want",
+  "@personalize",
+  "tweak.prop",
+
+  "Tweaks","Additional Performance Enhancers","","group",
+  "b2r","Browser2Ram","Speeds up Stock, Chrome, Firefox, Dolphin & 15 other Browsers","check",
+  "adblock","Ad Block Hosts File","This installs a file that blocks most Ads","check",
+  "fsync","IO Tweak: Disable fsync","Speeds up IO read/writes to internal SD but can cause data corruption","check",
+  "zipalign","Zip Align Apps and Optimize dabases","Script to optimize /data apk and db files internally","check",
+
+  "BETA Tweaks","Experimental Tweaks for Beta Testing","","group",
+  "gpu1","GPU Rendering: Hardware Rendering","Disable software rendering","check",
+  "gpu2","GPU Rendering: Force GPU Rendering","Force GPU for 2D drawing","check",
+  "cpu","Basic CPU Tweaks","Include sbdags basic cpu speed tweaks","check",
+  "ext","Extended Kernel Tweaks","Include sbdags extended kernel speed tweaks","check"
+
+);
+
+# Finished custom options
+ini_set("text_next", "Install now");
+
+viewbox(
+  "READY TO INSTALL",
+  "You are now ready to begin installation.\n\n"+
+  "Press <b>Install now</b> to start.\n\n"+
+  "If you want to review or change any of your installation settings, press <b>Back</b>.",
+  "@install"
+  
+);
+
+ini_set("text_next", "Next");
+
+install(
+  "INSTALLING",
+  "Installing ZOMBi-POP...\nPlease Wait until it Finishes...",
+  "@install"
+  
+);
+ini_set("text_next", "Finish");
+
+viewbox(
+  "INSTALLATION COMPLETED",
+  "<b><#selectbg_g>Congratulations...</#></b>\n\n"+
+  "ZOMBi-POP has been installed successfully.\n\n"+
+  "Press Finish, Reboot and Inherit!\n\nEnjoy your tablet!",
+  "@info"
+  
+);
